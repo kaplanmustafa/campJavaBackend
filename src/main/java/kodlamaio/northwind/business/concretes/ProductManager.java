@@ -88,4 +88,5 @@ public class ProductManager implements ProductService {
     public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
         return new SuccessDataResult<>(productDao.getProductWithCategoryDetails(), "Data Listelendi");
     }
+
 }
