@@ -32,6 +32,11 @@ public class ProductManager implements ProductService {
     }
 
     @Override
+    public DataResult<Product> getById(int id) {
+        return new SuccessDataResult<>(productDao.getById(id), "Data Listelendi");
+    }
+
+    @Override
     public DataResult<List<Product>> getAll(int pageNo, int pageSize) {
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
         return new SuccessDataResult<>(productDao.findAll(pageable).getContent(), "Data Listelendi");

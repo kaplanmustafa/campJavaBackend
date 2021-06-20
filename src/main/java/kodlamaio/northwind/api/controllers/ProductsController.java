@@ -26,6 +26,11 @@ public class ProductsController {
         return productService.getAll();
     }
 
+    @GetMapping("/getById")
+    public DataResult<Product> getById(@RequestParam("productId") int productId) {
+        return productService.getById(productId);
+    }
+
     @GetMapping("/getAllByPage")
     public DataResult<List<Product>> getAllByPage(@RequestParam("pageNo") int pageNo, @RequestParam("pageSize") int pageSize) {
         return productService.getAll(pageNo, pageSize);

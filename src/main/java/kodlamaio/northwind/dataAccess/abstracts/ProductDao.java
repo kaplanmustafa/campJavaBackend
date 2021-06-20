@@ -13,6 +13,8 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
 
     Product getByProductNameAndCategory_Id(String productName, int categoryId);
 
+    Product getById(int id);
+
     List<Product> getByProductNameOrCategory_Id(String productName, int categoryId);
 
     List<Product> getByCategoryIn(List<Integer> categories);
